@@ -1,0 +1,30 @@
+.temperature {
+  font-size: 15rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.unit-container {
+  position: absolute;
+  top: -15px;
+  right: -140px;
+  font-size: 4rem;
+}
+
+.unit {
+  cursor: pointer;
+}
+
+.city {
+  font-size: 5rem;
+  margin-top: -60px;
+}
+
+.seperator {
+  display: inline-block;
+  width: 5px;
+  height: 47px;
+  background-color: white;
+  margin: 0 15px 0 25px;
+}

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   background-image: url('../img/bg1.jpg');
   color: white;
 }
@@ -12,5 +13,4 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
 }
