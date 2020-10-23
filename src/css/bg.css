@@ -6,6 +6,7 @@
   align-items: center;
   flex-direction: column;
   background-image: url('../img/bg1.jpg');
+  position: relative;
   color: white;
 }
 

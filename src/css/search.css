@@ -1,0 +1,15 @@
+.search-container {
+  position: absolute;
+  left: 0;
+  background-color: black;
+  border-radius: 0 25px 25px 0;
+}
+
+.icon {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../img/icons/search.png');
+  width: 30px;
+  height: 30px;
+}
