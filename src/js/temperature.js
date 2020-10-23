@@ -1,5 +1,5 @@
 
-import './css/temperature.css';
+import '../css/temperature.css';
 
 export default function () {
   const container = document.createElement('div');

@@ -1,4 +1,4 @@
-import './css/bg.css';
+import '../css/bg.css';
 
 export default function () {
   const container = document.createElement('div');
