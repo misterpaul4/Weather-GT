@@ -1,5 +1,6 @@
 
 import '../css/temperature.css';
+import getLocation from './utils/finder';
 
 const render = (() => {
   let tempIsCelsius = true;
@@ -17,15 +18,12 @@ const render = (() => {
   unitContainer.className = 'unit-container';
   seperator.className = 'seperator';
   celsius.className = 'unit';
-  fahrehnheit.className = 'unit';
+  fahrehnheit.className = 'unit inactive-unit';
   container.className = 'text-center temp-container';
   cityContainer.className = 'city';
 
-  temperature.textContent = '30';
   celsius.textContent = '°C';
   fahrehnheit.textContent = '°F';
-  city.textContent = 'Kampala';
-  contry.textContent = ', KA';
 
   unitContainer.appendChild(celsius);
   unitContainer.appendChild(seperator);
@@ -42,9 +40,17 @@ const render = (() => {
     temperature.textContent = Math.round(location.main.temp);
   };
 
+  const setDefault = (location) => {
+    getLocation(location).then(locationObj => {
+      update(locationObj);
+    });
+  };
+
   celsius.addEventListener('click', () => {
     if (!tempIsCelsius) {
       temperature.textContent = Math.round((Number(temperature.textContent) - 32) * (5 / 9));
+      fahrehnheit.classList.add('inactive-unit');
+      celsius.classList.remove('inactive-unit');
       tempIsCelsius = true;
     }
   });
@@ -52,11 +58,13 @@ const render = (() => {
   fahrehnheit.addEventListener('click', () => {
     if (tempIsCelsius) {
       temperature.textContent = Math.round((Number(temperature.textContent) * (9 / 5)) + 32);
+      celsius.classList.add('inactive-unit');
+      fahrehnheit.classList.remove('inactive-unit');
       tempIsCelsius = false;
     }
   });
 
-  return { container, update };
+  return { container, update, setDefault };
 })();
 
 export default render;

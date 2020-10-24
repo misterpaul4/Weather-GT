@@ -20,7 +20,6 @@ export default function () {
 
   searchIcon.addEventListener('click', () => {
     getLocation(searchInput.value).then(location => {
-      // action
       temperature.update(location);
     });
   });
@@ -28,7 +27,6 @@ export default function () {
   formContainer.addEventListener('submit', (e) => {
     e.preventDefault();
     getLocation(searchInput.value).then(location => {
-      // action
       temperature.update(location);
     });
   });

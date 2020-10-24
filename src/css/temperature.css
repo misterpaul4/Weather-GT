@@ -31,3 +31,7 @@
   background-color: white;
   margin: 0 15px 0 25px;
 }
+
+.inactive-unit {
+  opacity: 0.5;
+}
