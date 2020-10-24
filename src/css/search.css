@@ -3,13 +3,35 @@
   left: 0;
   background-color: black;
   border-radius: 0 25px 25px 0;
+  font-size: 1.3rem;
+}
+
+form {
+  border-radius: 0 25px 25px 0;
 }
 
 .icon {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  transform: rotate(90deg);
+  transition: transform 0.9s;
+}
+
+.light-icon {
   background-image: url('../img/icons/search.png');
-  width: 30px;
-  height: 30px;
+}
+
+.dark-icon {
+  background-image: url('../img/icons/search-dark.png');
+}
+
+.hide-input {
+  width: 0;
+  visibility: hidden;
+  transition: 0.9s;
+  border-radius: 0;
+  background-color: lightgray;
 }
