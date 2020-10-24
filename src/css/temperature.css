@@ -1,14 +1,17 @@
+.temp-container {
+  position: relative;
+}
+
 .temperature {
   font-size: 15rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  position: relative;
   display: inline-block;
 }
 
 .unit-container {
   position: absolute;
   top: -15px;
-  right: -140px;
+  right: -100px;
   font-size: 4rem;
 }
 

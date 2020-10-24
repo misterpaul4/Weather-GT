@@ -10,15 +10,5 @@ const render = (() => {
   document.body.appendChild(background);
   background.appendChild(search());
   background.appendChild(clock());
-  background.appendChild(temperature());
+  background.appendChild(temperature.container);
 })();
-
-// async function getWeather(location) {
-//   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=72f817be934d7453dd9541046842672c&units=metric`;
-//   const fetchedData = await (await fetch(url)).json();
-//   return fetchedData;
-// }
-
-// getWeather('London').then(data => {
-//   console.log(data.main.temp);
-// });

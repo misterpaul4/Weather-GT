@@ -1,4 +1,6 @@
 import '../css/search.css';
+import temperature from './temperature';
+import getLocation from './utils/finder';
 
 export default function () {
   const container = document.createElement('div');
@@ -16,22 +18,18 @@ export default function () {
   formContainer.appendChild(searchIcon);
   container.appendChild(formContainer);
 
-  const findLocation = async (location) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=72f817be934d7453dd9541046842672c&units=metric`;
-    const fetchedData = await (await fetch(url)).json();
-    return fetchedData;
-  };
-
   searchIcon.addEventListener('click', () => {
-    findLocation(searchInput.value).then(data => {
+    getLocation(searchInput.value).then(location => {
       // action
+      temperature.update(location);
     });
   });
 
   formContainer.addEventListener('submit', (e) => {
     e.preventDefault();
-    findLocation(searchInput.value).then(data => {
+    getLocation(searchInput.value).then(location => {
       // action
+      temperature.update(location);
     });
   });
 
