@@ -2,6 +2,7 @@
 import '../css/temperature.css';
 
 const render = (() => {
+  let tempIsCelsius = true;
   const container = document.createElement('div');
   const temperature = document.createElement('div');
   const cityContainer = document.createElement('div');
@@ -40,6 +41,20 @@ const render = (() => {
     contry.textContent = `, ${location.sys.country}`;
     temperature.textContent = Math.round(location.main.temp);
   };
+
+  celsius.addEventListener('click', () => {
+    if (!tempIsCelsius) {
+      temperature.textContent = Math.round((Number(temperature.textContent) - 32) * (5 / 9));
+      tempIsCelsius = true;
+    }
+  });
+
+  fahrehnheit.addEventListener('click', () => {
+    if (tempIsCelsius) {
+      temperature.textContent = Math.round((Number(temperature.textContent) * (9 / 5)) + 32);
+      tempIsCelsius = false;
+    }
+  });
 
   return { container, update };
 })();
