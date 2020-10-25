@@ -28,15 +28,6 @@ export default function () {
   warningContainer.appendChild(warningIcon);
   warningContainer.appendChild(warningMessage);
   container.appendChild(formContainer);
-  // container.appendChild(warningContainer);
-
-  function updateTemperature() {
-    if (searchInput.value !== '') {
-      getLocation(searchInput.value).then(location => {
-        if( valid(location) ) { temperature.update(location); } else { alert(); }
-      });
-    }
-  }
 
   function valid(location) {
     if (location.cod === '404') { return false; }
@@ -45,6 +36,18 @@ export default function () {
 
   function alert() {
     // display warning
+    warningContainer.style.display = 'flex';
+  }
+
+  function updateTemperature() {
+    if (searchInput.value !== '') {
+      getLocation(searchInput.value).then(location => {
+        if (valid(location)) {
+          temperature.update(location);
+          warningContainer.style.display = 'none';
+        } else { alert(); }
+      });
+    }
   }
 
   let searchFieledClosed = true;
@@ -58,7 +61,7 @@ export default function () {
       searchIcon.classList.add('dark-icon', 'ml-2');
       searchIcon.style.transform = 'rotate(360deg)';
       formContainer.style.backgroundColor = 'lightgray';
-    } else { searchFieledClosed = false }
+    } else { searchFieledClosed = false; }
   });
 
   formContainer.addEventListener('submit', (e) => {

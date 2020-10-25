@@ -41,13 +41,18 @@ form {
 .warning {
   background-color: #f25757;
   position: absolute;
-  bottom: -40px;
-  left: 0;
+  bottom: -30px;
+  left: 8px;
   white-space: nowrap;
   font-size: 12px;
-  display: flex;
+  display: none;
   align-items: center;
   padding: 3px 10px;
+  border-radius: 10px;
+  animation-name: ascend;
+  animation-duration: 1s;
+  animation-iteration-count: 5;
+  opacity: 1;
 }
 
 .warning-icon {
@@ -58,4 +63,13 @@ form {
   width: 12px;
   height: 12px;
   margin-right: 15px;
+}
+
+@keyframes ascend {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.3;
+  }
 }
