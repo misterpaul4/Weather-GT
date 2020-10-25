@@ -1,5 +1,6 @@
 .temp-container {
   position: relative;
+  display: inline-block;
 }
 
 .temperature {
@@ -9,10 +10,11 @@
 }
 
 .unit-container {
-  position: absolute;
-  top: -15px;
-  right: -100px;
   font-size: 4rem;
+  display: inline-block;
+  position: absolute;
+  right: -183px;
+  top: -15px;
 }
 
 .unit {

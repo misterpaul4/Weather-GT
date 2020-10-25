@@ -5,6 +5,7 @@ import getLocation from './utils/finder';
 const render = (() => {
   let tempIsCelsius = true;
   const container = document.createElement('div');
+  const tempteratureContainer = document.createElement('div');
   const temperature = document.createElement('div');
   const cityContainer = document.createElement('div');
   const city = document.createElement('span');
@@ -19,8 +20,9 @@ const render = (() => {
   seperator.className = 'seperator';
   celsius.className = 'unit';
   fahrehnheit.className = 'unit inactive-unit';
-  container.className = 'text-center temp-container';
+  container.className = 'text-center';
   cityContainer.className = 'city';
+  tempteratureContainer.className = 'temp-container';
 
   celsius.textContent = '°C';
   fahrehnheit.textContent = '°F';
@@ -30,8 +32,9 @@ const render = (() => {
   unitContainer.appendChild(fahrehnheit);
   cityContainer.appendChild(city);
   cityContainer.appendChild(contry);
-  container.appendChild(unitContainer);
-  container.appendChild(temperature);
+  tempteratureContainer.appendChild(temperature);
+  tempteratureContainer.appendChild(unitContainer);
+  container.appendChild(tempteratureContainer);
   container.appendChild(cityContainer);
 
   const update = (location) => {
