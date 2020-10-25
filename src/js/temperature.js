@@ -37,24 +37,16 @@ const render = (() => {
   container.appendChild(tempteratureContainer);
   container.appendChild(cityContainer);
 
-  const update = (location) => {
-    city.textContent = location.name;
-    contry.textContent = `, ${location.sys.country}`;
-    temperature.textContent = Math.round(location.main.temp);
-  };
-
-  const setDefault = (location) => {
-    getLocation(location).then(locationObj => {
-      update(locationObj);
-    });
-  };
+  function resetUnit() {
+    tempIsCelsius = true;
+    fahrehnheit.classList.add('inactive-unit');
+    celsius.classList.remove('inactive-unit');
+  }
 
   celsius.addEventListener('click', () => {
     if (!tempIsCelsius) {
       temperature.textContent = Math.round((Number(temperature.textContent) - 32) * (5 / 9));
-      fahrehnheit.classList.add('inactive-unit');
-      celsius.classList.remove('inactive-unit');
-      tempIsCelsius = true;
+      resetUnit();
     }
   });
 
@@ -66,6 +58,19 @@ const render = (() => {
       tempIsCelsius = false;
     }
   });
+
+  const update = (location) => {
+    city.textContent = location.name;
+    contry.textContent = `, ${location.sys.country}`;
+    temperature.textContent = Math.round(location.main.temp);
+    resetUnit();
+  };
+
+  const setDefault = (location) => {
+    getLocation(location).then(locationObj => {
+      update(locationObj);
+    });
+  };
 
   return { container, update, setDefault };
 })();
