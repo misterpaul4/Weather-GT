@@ -37,3 +37,12 @@
 .inactive-unit {
   opacity: 0.5;
 }
+
+.extras {
+  font-size: 1rem;
+  display: inline-block;
+  position: absolute;
+  right: -120px;
+  bottom: 185px;
+  text-align: left;
+}
