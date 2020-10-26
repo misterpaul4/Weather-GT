@@ -1,0 +1,58 @@
+.temp-container {
+  position: relative;
+  display: inline-block;
+}
+
+.temperature {
+  font-size: 15rem;
+  font-family: cursive;
+  display: inline-block;
+}
+
+.unit-container {
+  font-size: 4rem;
+  display: inline-block;
+  position: absolute;
+  right: -183px;
+  top: -15px;
+}
+
+.unit {
+  cursor: pointer;
+}
+
+.city {
+  font-size: 5rem;
+  margin-top: -60px;
+}
+
+.seperator {
+  display: inline-block;
+  width: 5px;
+  height: 47px;
+  background-color: white;
+  margin: 0 15px 0 25px;
+}
+
+.inactive-unit {
+  opacity: 0.5;
+}
+
+.extras {
+  font-size: 1rem;
+  display: inline-block;
+  position: absolute;
+  right: -120px;
+  bottom: 185px;
+  text-align: left;
+}
+
+.description {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  left: 0;
+  text-shadow: 3px 3px 20px #f9c, -2px 1px 30px #f9c;
+  word-break: break-word;
+}
