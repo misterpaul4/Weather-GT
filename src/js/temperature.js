@@ -86,19 +86,15 @@ const render = (() => {
   container.appendChild(tempteratureContainer);
   container.appendChild(cityContainer);
 
-  function resetUnit() {
+  const resetUnit = () => {
     tempIsCelsius = true;
     fahrehnheit.classList.add('inactive-unit');
     celsius.classList.remove('inactive-unit');
-  }
+  };
 
-  function toCelcius(item) {
-    return Math.round((Number(item) - 32) * (5 / 9));
-  }
+  const toCelcius = (item) => Math.round((Number(item) - 32) * (5 / 9));
 
-  function toFahrehnheit(item) {
-    return Math.round((Number(item) * (9 / 5)) + 32);
-  }
+  const toFahrehnheit = (item) => Math.round((Number(item) * (9 / 5)) + 32);
 
   celsius.addEventListener('click', () => {
     if (!tempIsCelsius) {

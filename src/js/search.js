@@ -29,17 +29,16 @@ export default function () {
   warningContainer.appendChild(warningMessage);
   container.appendChild(formContainer);
 
-  function valid(location) {
+  const valid = (location) => {
     if (location.cod === '404') { return false; }
     return true;
-  }
+  };
 
-  function alert() {
-    // display warning
+  const alert = () => {
     warningContainer.style.display = 'flex';
-  }
+  };
 
-  function updateTemperature() {
+  const updateTemperature = () => {
     if (searchInput.value !== '') {
       getLocation(searchInput.value).then(location => {
         if (valid(location)) {
@@ -48,7 +47,7 @@ export default function () {
         } else { alert(); }
       });
     }
-  }
+  };
 
   let searchFieledClosed = true;
 
