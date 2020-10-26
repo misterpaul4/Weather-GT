@@ -53,7 +53,6 @@
   top: 35px;
   right: 0;
   left: 0;
-  text-shadow: 3px 3px 20px #ff99cc,
-  -2px 1px 30px #ff99cc;
+  text-shadow: 3px 3px 20px #f9c, -2px 1px 30px #f9c;
   word-break: break-word;
 }

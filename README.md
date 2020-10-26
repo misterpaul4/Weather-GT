@@ -18,7 +18,7 @@
 - Clone the repository to get a local copy `git clone https://github.com/misterpaul4/Weather-GT`
 - In the project's directory, install dependencies by running `npm install`
 - `npm run build` to compile
-- inside the dist folder, open the index.html with your browser.
+- inside the docs folder, open the index.html with your browser.
 
 ## Authors
 
