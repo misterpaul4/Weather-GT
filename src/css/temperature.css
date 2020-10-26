@@ -48,11 +48,12 @@
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 1.2rem;
   position: absolute;
-  top: 10px;
+  top: 35px;
   right: 0;
   left: 0;
   text-shadow: 3px 3px 20px #ff99cc,
   -2px 1px 30px #ff99cc;
+  word-break: break-word;
 }
