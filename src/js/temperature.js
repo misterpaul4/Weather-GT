@@ -42,6 +42,7 @@ const render = (() => {
   cityContainer.className = 'city';
   tempteratureContainer.className = 'temp-container';
   extrasContainer.className = 'extras';
+  description.className = 'description';
 
   celsius.textContent = '°C';
   fahrehnheit.textContent = '°F';
@@ -77,6 +78,7 @@ const render = (() => {
   extrasContainer.appendChild(minTempContainer);
   extrasContainer.appendChild(humidityContainer);
 
+  tempteratureContainer.appendChild(description);
   tempteratureContainer.appendChild(temperature);
   tempteratureContainer.appendChild(unitContainer);
   tempteratureContainer.appendChild(extrasContainer);
@@ -126,6 +128,7 @@ const render = (() => {
     city.textContent = location.name;
     contry.textContent = `, ${location.sys.country}`;
     temperature.textContent = Math.round(location.main.temp);
+    description.textContent = location.weather[0].description;
     feelslikeValue.textContent = Math.round(location.main.feels_like);
     maxTempValue.textContent = Math.round(location.main.temp_max);
     minTempValue.textContent = Math.round(location.main.temp_min);
